@@ -3,30 +3,30 @@
     <div class="card">
       <div class="card-body p-4 px-5">
         <form #productForm="ngForm" (ngSubmit)="createProduct(productForm)">
-          <input type="hidden" name="id" #id="ngModel" [(ngModel)]="productService.selectedProduct.id">
+          <input #id="ngModel" [(ngModel)]="productService.selectedProduct.id" name="id" type="hidden">
           <div class="form-group">
-            <input type="text" name="name" #name="ngModel" [(ngModel)]="productService.selectedProduct.name"
-                   placeholder="Ingrese el nombre del producto" class="form-control">
+            <input #name="ngModel" [(ngModel)]="productService.selectedProduct.name" class="form-control" name="name"
+                   placeholder="Ingrese el nombre del producto" type="text">
           </div>
           <div class="form-group">
             <div class="input-field col-s12">
-              <input type="text" class="form-control" name="max" #name="ngModel"
-                     [(ngModel)]="productService.selectedProduct.max" placeholder="Ingrese cantidad maxima">
+              <input #name="ngModel" [(ngModel)]="productService.selectedProduct.max" class="form-control" name="max"
+                     placeholder="Ingrese cantidad maxima" type="text">
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="min" #name="ngModel"
-                   [(ngModel)]="productService.selectedProduct.min" placeholder="Ingrese cantidad minima">
+            <input #name="ngModel" [(ngModel)]="productService.selectedProduct.min" class="form-control" name="min"
+                   placeholder="Ingrese cantidad minima" type="text">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="stock" #name="ngModel"
-                   [(ngModel)]="productService.selectedProduct.stock" placeholder="Ingrese cantidad en stock">
+            <input #name="ngModel" [(ngModel)]="productService.selectedProduct.stock" class="form-control" name="stock"
+                   placeholder="Ingrese cantidad en stock" type="text">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="enabled" #name="ngModel"
-                   [(ngModel)]="productService.selectedProduct.enabled" placeholder="Ingrese el estado del producto">
+            <input #name="ngModel" [(ngModel)]="productService.selectedProduct.enabled" class="form-control" name="enabled"
+                   placeholder="Ingrese el estado del producto" type="text">
           </div>
-          <button class="btn btn-primary mr-2" (click)="resetForm(productForm)">Clean</button>
+          <button (click)="resetForm(productForm)" class="btn btn-primary mr-2">Clean</button>
           <button class="btn btn-secondary">Save</button>
         </form>
       </div>
@@ -49,10 +49,10 @@
         <td>{{product.min}}</td>
         <td>{{product.max}}</td>
         <td>
-          <a class="btn btn-sm" (click)="edit(product)">
+          <a (click)="edit(product)" class="btn btn-sm">
             <i class="material-icons">edit</i>
           </a>
-          <a class="btn btn-sm" (click)="delete(product.id!, productForm)">
+          <a (click)="delete(product.id!, productForm)" class="btn btn-sm">
             <i class="material-icons">delete</i>
           </a>
         </td>
